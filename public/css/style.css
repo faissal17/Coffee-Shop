@@ -1,3 +1,32 @@
-body {
-    background-image: url(../images/CoffeShop.jpg);
+.a {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(/images/CoffeShop.jpg);
+    background-repeat: no-repeat;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+a :hover {
+    color: crimson;
+}
+
+.home {
+    height: 400px;
+    padding: 70px;
+}
+
+span {
+    color: crimson;
+}
+
+.title-1 {
+    font-weight: 56px;
+    font-weight: 600;
+}
+
+.home p {
+    color: lemonchiffon;
+    font-size: 20px;
+    padding-top: 10px;
 }
