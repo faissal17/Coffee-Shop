@@ -14,8 +14,7 @@ class MealController extends Controller
      */
     public function index()
     {
-        $Meal = Meal::all();
-        return view('dashboard.blade.php')->with('Meal', $Meal);
+        // 
     }
 
     /**
@@ -36,7 +35,7 @@ class MealController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // 
     }
 
     /**
