@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Meal;  //add meal model , the data coming from database via model 
+use App\Models\Meal;  //add meal model , the data coming from database via model
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class MealController extends Controller
 {
@@ -14,17 +15,8 @@ class MealController extends Controller
      */
     public function index()
     {
-        // 
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $Meal = Meal::all();
+        return view('dashboard');
     }
 
     /**
@@ -35,7 +27,21 @@ class MealController extends Controller
      */
     public function store(Request $request)
     {
-        // 
+        $image = $request->file('image')->getClientOriginalName();
+        $title = $request->get('title');
+        $price = $request->get('price');
+        $des = $request->get('des');
+
+        // return $request->input();
+
+        $Meal = new Meal();
+        $Meal->name = $title;
+        $Meal->image = $image;
+        $Meal->price = $price;
+        $Meal->description = $des;
+        $Meal->save();
+
+        return redirect('dashboard');
     }
 
     /**
@@ -46,7 +52,6 @@ class MealController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**

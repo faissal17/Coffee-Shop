@@ -27,3 +27,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::post('inserData', [MealController::class, 'store']);
