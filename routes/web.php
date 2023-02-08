@@ -23,9 +23,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
 });
 
 Route::post('inserData', [MealController::class, 'store']);
+Route::get('dashboard', [MealController::class, 'show'])->name('dashboard');

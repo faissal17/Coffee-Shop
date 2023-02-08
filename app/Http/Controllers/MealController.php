@@ -50,8 +50,10 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
+        $data = Meal::all();
+        return view('dashboard', ['type' => $data]);
     }
 
     /**

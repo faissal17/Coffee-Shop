@@ -27,69 +27,30 @@
                 </tr>
             </thead>
             <tbody>
+                {{-- @dd($type) --}}
+                @foreach ($type as $coffe)
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                     <td class="w-4 p-4">
                     </td>
                     <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-                        <img class="w-10 h-10 rounded-full" src="/images/machiato.jpg" alt="Jese image">
+                        <img class="w-10 h-10 rounded-full" src="/images/{{$coffe['image']}}" alt="Jese image">
                         <div class="pl-3">
-                            <div class="text-base font-semibold">Machiato Coffee</div>
+                            <div class="text-base font-semibold">{{$coffe['name']}}</div>
                         </div>
                     </th>
                     <td class="px-6 py-4">
-                        9.99$
+                        {{$coffe['price']}}$
                     </td>
                     <td class="px-6 py-4">
                         <div class="flex items-center">
-                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div> delicious
+                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2 truncate"></div>{{$coffe['description']}}
                         </div>
                     </td>
                     <td class="px-6 py-4">
-                        <a href="#" class="font-medium text-red-500 dark:text-blue-500 no-underline">Show</a>
+                        <a href="#modal-task" data-bs-toggle="modal" class="font-medium text-red-500 dark:text-blue-500 no-underline" onclick="edit()">Show</a>
                     </td>
                 </tr>
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <td class="w-4 p-4">
-                    </td>
-                    <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        <img class="w-10 h-10 rounded-full" src="/images/CoffeShop.jpg" alt="Jese image">
-                        <div class="pl-3">
-                            <div class="text-base font-semibold">Coffee</div>
-                        </div>
-                    </th>
-                    <td class="px-6 py-4">
-                        7.99$
-                    </td>
-                    <td class="px-6 py-4">
-                        <div class="flex items-center">
-                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div> delicious
-                        </div>
-                    </td>
-                    <td class="px-6 py-4">
-                        <a href="#" class="font-medium text-red-500 dark:text-blue-500 no-underline">Show</a>
-                    </td>
-                </tr>
-                <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <td class="w-4 p-4">
-                    </td>
-                    <th scope="row" class="flex items-center px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        <img class="w-10 h-10 rounded-full" src="/images/lait.jpg" alt="Jese image">
-                        <div class="pl-3">
-                            <div class="text-base font-semibold">Lait</div>
-                        </div>
-                    </th>
-                    <td class="px-6 py-4">
-                        5.99$
-                    </td>
-                    <td class="px-6 py-4">
-                        <div class="flex items-center">
-                            <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div> delicious
-                        </div>
-                    </td>
-                    <td class="px-6 py-4">
-                        <a href="#" class="font-medium text-red-500 dark:text-blue-500 no-underline">Show</a>
-                    </td>
-                </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
