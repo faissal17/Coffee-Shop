@@ -47,7 +47,7 @@
                         </div>
                     </td>
                     <td class="px-6 py-4">
-                        <a href="#modal-task" data-bs-toggle="modal" class="font-medium text-red-500 dark:text-blue-500 no-underline" onclick="edit()">Show</a>
+                        <a href="#modal-task" data-bs-toggle="modal" class="font-medium text-red-500 dark:text-blue-500 no-underline" onclick="edit({{$coffe}})">Show</a>
                     </td>
                 </tr>
                 @endforeach
@@ -60,7 +60,7 @@
 <div class="modal fade" id="modal-task">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form method="post" action= "inserData" id="Meal-modal" enctype="multipart/form-data">
+            <form method="post" action= "inserData" enctype="multipart/form-data" id="Meal-modal">
                 @csrf
                 <div class="modal-header">
                     <h5 class="modal-title fw-bold">Add Meal</h5>
@@ -76,7 +76,7 @@
                         </div>
                         <div class="mb-3 col">
                             <label class="form-label">Meal title</label>
-                            <input type="text" class="form-control" name="title" id="title-id" />
+                            <input type="text" class="form-control" name="title" id="name" />
                         </div>
 
                         <div class="mb-3 col">
@@ -86,7 +86,7 @@
                     </div>
                     <div class="mb-0">
                         <label class="form-label">Description</label>
-                        <textarea class="form-control" rows="5" id="des" name="des"></textarea>
+                        <textarea class="form-control" rows="5" id="description" name="des"></textarea>
                     </div>
                     <div class="modal-footer">
                         <a href="#" class="btn btn-white" data-bs-dismiss="modal">Cancel</a>

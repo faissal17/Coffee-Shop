@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::resource('dishes', MealController::class);
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

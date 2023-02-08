@@ -87,6 +87,5 @@ class MealController extends Controller
      */
     public function destroy($id)
     {
-        //
     }
 }
