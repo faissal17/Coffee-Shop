@@ -27,5 +27,11 @@ Route::middleware([
 ])->group(function () {
 });
 
-Route::post('inserData', [MealController::class, 'store']);
+// Route::post('inserData', [MealController::class, 'store']);
 Route::get('dashboard', [MealController::class, 'show'])->name('dashboard');
+Route::delete('dishes/delete/{dish}', [MealController::class, 'destroy']);
+// Route::put('dishes', [MealController::class, 'update'])->name('update');
+// // Route::put('/meals/{meal}', [MealController::class, 'update'])->name('update');
+
+
+Route::resource('meal', MealController::class);

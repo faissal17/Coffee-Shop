@@ -15,8 +15,8 @@ class MealController extends Controller
      */
     public function index()
     {
-        $Meal = Meal::all();
-        return view('dashboard');
+        $data = Meal::all();
+        return view('dashboard', ['type' => $data]);
     }
 
     /**
@@ -30,7 +30,7 @@ class MealController extends Controller
         $image = $request->file('image')->getClientOriginalName();
         $title = $request->get('title');
         $price = $request->get('price');
-        $des = $request->get('des');
+        $des = $request->get('description');
 
         // return $request->input();
 
@@ -62,7 +62,7 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Meal $coffe)
     {
         //
     }
@@ -74,10 +74,22 @@ class MealController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Meal $meal)
     {
-        //
+        // dd($request);
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            // 'image' => 'required',
+        ]);
+
+        $meal->update($request->only(['name', 'description', 'price']));
+
+
+        return redirect('dashboard');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -87,5 +99,7 @@ class MealController extends Controller
      */
     public function destroy($id)
     {
+        Meal::destroy($id);
+        return redirect('dashboard');
     }
 }
