@@ -14,9 +14,7 @@ use App\Http\Controllers\MealController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [MealController::class, 'index']);
 
 
 Route::resource('dishes', MealController::class);
@@ -30,8 +28,5 @@ Route::middleware([
 // Route::post('inserData', [MealController::class, 'store']);
 Route::get('dashboard', [MealController::class, 'show'])->name('dashboard');
 Route::delete('dishes/delete/{dish}', [MealController::class, 'destroy']);
-// Route::put('dishes', [MealController::class, 'update'])->name('update');
-// // Route::put('/meals/{meal}', [MealController::class, 'update'])->name('update');
-
 
 Route::resource('meal', MealController::class);

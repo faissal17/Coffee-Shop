@@ -16,7 +16,7 @@ class MealController extends Controller
     public function index()
     {
         $data = Meal::all();
-        return view('dashboard', ['type' => $data]);
+        return view('welcome', ['type' => $data]);
     }
 
     /**

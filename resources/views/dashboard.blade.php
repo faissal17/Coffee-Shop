@@ -117,7 +117,7 @@
                     </div>
                     <div class="modal-body">
                         <!-- This Input Allows Storing Meals Index  -->
-                        <input type="text" id="id" name="id">
+                        <input type="hidden" id="id" name="id">
                         <div class="row">
                             <div class="mb-3 col">
                                 <label class="form-label">Meal image</label>
