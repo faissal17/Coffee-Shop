@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MealController;
+use App\Mail\HelloMail;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +17,6 @@ use App\Http\Controllers\MealController;
 */
 
 Route::get('/', [MealController::class, 'index']);
-
 
 Route::resource('dishes', MealController::class);
 Route::middleware([

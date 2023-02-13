@@ -34,7 +34,7 @@
         </div>
         <div class="shop" id="shop">
             <div class="shop-header">
-                <h2>Coffee Haven Drinks</h2>
+                <h2>Coffee Heaven Drinks</h2>
             </div>
             <div class="shop-box">
                 @foreach($type as $meal)
