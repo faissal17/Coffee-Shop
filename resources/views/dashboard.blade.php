@@ -1,5 +1,9 @@
 <x-app-layout>
-
+<style>
+    .min-h-screen {
+    min-height: auto;
+}
+</style>
     <x-slot name="header">
         <div class="ms-auto" onclick="addbtn()">
             <a href="#modal-task" data-bs-toggle="modal" class="btn btn-secondary" id="add">{{ __('Add New Meal') }}</a>
@@ -10,18 +14,16 @@
         <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
             <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
-                    <th scope="col" class="p-4">
-                    </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-1 py-3">
                         Meal Name
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-1 py-3">
                         Price
                     </th>
-                    <th scope="col" class="px-6 py-3">
-                        Description
+                    <th scope="col" class="px-1 py-3">
+                        {{-- Description --}}
                     </th>
-                    <th scope="col" class="px-6 py-3">
+                    <th scope="col" class="px-1 py-3">
                         Action
                     </th>
                 </tr>
@@ -30,9 +32,8 @@
                 {{-- @dd($type) --}}
                 @foreach ($type as $coffe)
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    <td class="w-4 p-4">
-                    </td>
-                    <th scope="row" class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+
+                    <th scope="row" class="flex items-center px-1 py-4 text-gray-900 whitespace-nowrap dark:text-white">
                         <img class="w-10 h-10 rounded-full" src="/images/{{$coffe['image']}}" alt="Jese image">
                         <div class="pl-3">
                             <div class="text-base font-semibold">{{$coffe['name']}}</div>
